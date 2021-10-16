@@ -391,6 +391,7 @@ h1, h2, h3, h4, h5, h6 {
   background-size: cover;
   position: relative;
   margin-bottom: -70px;
+  opacity: 0.9;
 }
 @media (max-width: 992px) {
   #hero {
@@ -399,7 +400,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #hero:before {
   content: "";
-  background: rgba(8, 5, 14, 0.2) linear-gradient(rgba(11, 0, 29, 0.5) 0%, rgba(4, 0, 15, 0.5) 5%, rgba(21, 6, 33, 0.5) 40%, rgba(68, 50, 62, 0.-11.9) 76%, rgba(18, 16, 29, 0.-2.3) 94%, rgba(18, 16, 29, -1.5) 100%) repeat scroll 0% 0%;
+  /* background: rgba(8, 5, 14, 0.2) linear-gradient(rgba(11, 0, 29, 0.5) 0%, rgba(4, 0, 15, 0.5) 5%, rgba(21, 6, 33, 0.5) 40%, rgba(68, 50, 62, 0.-11.9) 76%, rgba(18, 16, 29, 0.-2.3) 94%, rgba(18, 16, 29, -1.5) 100%) repeat scroll 0% 0%; */
   position: absolute;
   bottom: 0;
   top: 0;
@@ -648,6 +649,72 @@ section {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
+/* CUSTOM SELECT */
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+.select-selected {
+  background-color: #2A7C6F;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: #2A7C6F;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+/* SEARCH BUTTON */
+.btn{
+  background-color:#2A7C6F ;
+  font-family: Arial;
+  width: 140px;
+  color: #fff;
+}
+
 .services .icon-box {
   padding: 30px;
   position: relative;
